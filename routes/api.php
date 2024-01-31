@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Src\Giphy\Infrastructure\Controller\GifController;
 use Illuminate\Support\Facades\Route;
+use App\Src\Giphy\Infrastructure\Controller\ApiAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/login',function(){
+    return response("No tiene autorización",503);
+})->name("login");
+Route::post('login', [ApiAuthController::class,'login']);
+Route::post('register', 'AuthController@register');
+Route::middleware('auth:api')->group(function () {
+    Route::get('gif/search',[GifController::class,'findByName'])->name("gif.search");
+    Route::get('gif/{id}',[GifController::class,'findById'])->name("gif.findById");
+    Route::post('gif/favorite',[GifController::class,'setFavorite'])->name("gif.favorite");
+
 });

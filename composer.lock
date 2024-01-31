@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ed1aca5e69025247e71e27a5da69964",
+    "content-hash": "dca9355220b88c12bd0ef7717a08fc03",
     "packages": [
         {
             "name": "brick/math",
@@ -701,6 +701,70 @@
                 }
             ],
             "time": "2023-10-12T05:21:21+00:00"
+        },
+        {
+            "name": "ghanem/giphy",
+            "version": "v1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AbdullahGhanem/laravel-giphy.git",
+                "reference": "5f353005915e101177d388eee8f51fff453265e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AbdullahGhanem/laravel-giphy/zipball/5f353005915e101177d388eee8f51fff453265e9",
+                "reference": "5f353005915e101177d388eee8f51fff453265e9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ghanem\\Giphy\\GiphyServiceProvider"
+                    ],
+                    "aliases": {
+                        "Giphy": "Ghanem\\Giphy\\Facades\\Giphy",
+                        "Stickers": "Ghanem\\Giphy\\Facades\\Stickers"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ghanem\\Giphy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "abdullah ghanem",
+                    "email": "3bdullah.ghanem@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A package that provides an interface between Laravel and Giphy API, includes Gifs.",
+            "homepage": "https://github.com/abdullahghanem/giphy",
+            "keywords": [
+                "api",
+                "gif",
+                "giphy",
+                "laravel",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/AbdullahGhanem/laravel-giphy/issues",
+                "source": "https://github.com/AbdullahGhanem/laravel-giphy/tree/v1.6"
+            },
+            "time": "2021-08-12T17:41:21+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -9207,5 +9271,5 @@
         "php": "^8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
